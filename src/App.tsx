@@ -1,24 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import Modal from "./components/Modal/Modal";
 import './App.css';
+import Input from "./components/Input/Input";
+import Button from "./components/Button/Button";
+import RadioButtonGroup from "./components/RadioButtonGroup/RadioButtonGroup";
 
 function App() {
+
+  const [isModalActive, setIsModalActive] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Modal isModalActive={isModalActive} setIsModalActive={setIsModalActive}>
+        <Input placeholder={'Placeholder'}/>
+        <Button mode='light'>OK</Button>
+        <RadioButtonGroup radioButtons={[{value: 'hello', name: 'hello'}, {value: 'world', name: 'world'}]}/>
+      </Modal>
+      <button onClick={() => setIsModalActive(true)}>Press Me</button>
     </div>
   );
 }
