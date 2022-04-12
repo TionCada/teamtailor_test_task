@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Button.module.scss';
+import './Button.scss'
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -9,9 +9,11 @@ interface ButtonProps {
 const Button = ({children, mode}: ButtonProps) => {
 
   return (
-    <button className={`${styles.button} ${mode}`}>
-      {children}
-    </button>
+      <div className='button_container'>
+        <button className={`${mode}`}>
+          {children}
+        </button>
+      </div>
   );
 }
 

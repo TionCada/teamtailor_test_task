@@ -1,0 +1,7 @@
+.modal_section_container {
+  display: grid;
+  grid-template-columns: 1fr 3.5fr;
+  grid-auto-flow: column;
+  font-size: 13px;
+  align-items: center;
+}

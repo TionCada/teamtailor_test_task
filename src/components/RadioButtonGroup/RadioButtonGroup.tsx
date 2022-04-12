@@ -1,30 +1,32 @@
-import React, {useState} from 'react';
-import styles from './RadioButtonGroup.module.scss';
+import React from 'react';
+import './RadioButtonGroup.scss'
+
+type InitData = 'Excel' | 'CSV';
 
 interface RadioButtonGroupProps {
-  radioButtons: {
-    value: string;
-    name: string;
-  }[];
+    initData: InitData[];
+    value: InitData;
+    setValue: (value: InitData) => void;
 }
 
-const RadioButtonGroup = ({radioButtons}: RadioButtonGroupProps) => {
+const RadioButtonGroup = ({initData, value, setValue}: RadioButtonGroupProps) => {
 
-  return (
-    <>
-      {radioButtons.map((item) => {
-        <div>
-          <input
-            type='radio'
-            name='dynamic-radio'
-            value={item.value}
-            checked={checkedOptionValue === option.value}
-            onChange={this.handleRadioChange}
-          />
+    return (
+        <div className='radio_button_group_container'>
+            {initData.map((item) =>
+                <>
+                    <input
+                        type='radio'
+                        value={item}
+                        checked={item === value}
+                        onChange={(e) => setValue(e.target.value as InitData)}
+                        id={item}
+                    />
+                    <p>{item}</p>
+                </>
+            )}
         </div>
-      })}
-    </>
-  );
+    );
 }
 
 export default RadioButtonGroup;

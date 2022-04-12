@@ -1,19 +1,25 @@
-import React, {useState} from 'react';
-import styles from './Input.module.scss'
+import React from 'react';
+import './Input.scss'
 
 interface InputProps {
-  placeholder: string;
+    placeholder: string;
+    value: string;
+    setValue: (value: string) => void;
 }
 
-const Input = ({placeholder}: InputProps) => {
+const Input = ({placeholder, value, setValue}: InputProps) => {
 
-  const [value, setValue] = useState('')
-
-  return (
-    <input className={styles.input} placeholder={placeholder} value={value} onChange={(e) => setValue(e.target.value)}>
-
-    </input>
-  );
+    return (
+        <div className='input_container'>
+            <input
+                className='input'
+                placeholder={placeholder}
+                value={value}
+                onChange={(e) =>
+                    setValue(e.target.value)}
+            />
+        </div>
+    );
 }
 
 export default Input;

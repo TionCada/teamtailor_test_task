@@ -1,0 +1,26 @@
+.container {
+  position: relative;
+  width: 160px;
+
+  select {
+    outline: none;
+    font-size: 13px;
+    width: 160px;
+    height: 35px;
+    appearance: none;
+    border: 1px solid #939393;
+    background-color: #ffffff;
+    padding-left: 6px;
+    color: #939393;
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+  }
+
+  img {
+    position: absolute;
+    right: 0;
+    width: 35px;
+    height: 35px;
+  }
+}
