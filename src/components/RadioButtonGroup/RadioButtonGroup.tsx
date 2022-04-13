@@ -1,29 +1,31 @@
-import React from 'react';
+import React, {Dispatch, SetStateAction} from 'react';
 import './RadioButtonGroup.scss'
-
-type InitData = 'Excel' | 'CSV';
+import {FormatValue} from '../../App'
+import {ScheduleValue} from '../../App'
 
 interface RadioButtonGroupProps {
-    initData: InitData[];
-    value: InitData;
-    setValue: (value: InitData) => void;
+    initData: FormatValue[] | ScheduleValue[];
+    value: FormatValue | ScheduleValue;
+    setValue: Dispatch<SetStateAction<FormatValue>> |
+        Dispatch<SetStateAction<ScheduleValue>>;
 }
 
 const RadioButtonGroup = ({initData, value, setValue}: RadioButtonGroupProps) => {
 
     return (
         <div className='radio_button_group_container'>
-            {initData.map((item) =>
-                <>
+            {initData.map((item, index) =>
+                <div key={item + index} className='radio_button_group'>
                     <input
                         type='radio'
                         value={item}
                         checked={item === value}
-                        onChange={(e) => setValue(e.target.value as InitData)}
+                        onChange={(e) => setValue(e.target.value as
+                            SetStateAction<FormatValue> & SetStateAction<ScheduleValue>)}
                         id={item}
                     />
                     <p>{item}</p>
-                </>
+                </div>
             )}
         </div>
     );

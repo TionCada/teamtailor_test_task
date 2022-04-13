@@ -1,0 +1,26 @@
+.time_picker_container {
+  position: relative;
+  width: 136px;
+
+  input[type="time"] {
+    font-family: Arial;
+    font-size: 13px;
+    width: 134px;
+    height: 31px;
+    appearance: none;
+    border: 1px solid #939393;
+    background-color: #ffffff;
+    padding-left: 8px;
+    color: #939393;
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+    outline: none;
+  }
+
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    background: none;
+    display:none;
+  }
+
+}

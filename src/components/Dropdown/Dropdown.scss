@@ -1,12 +1,14 @@
-.container {
+.dropdown_container {
   position: relative;
-  width: 160px;
+  width: 145px;
+  margin-right: -1px;
 
   select {
+    font-family: Arial;
     outline: none;
     font-size: 13px;
-    width: 160px;
-    height: 35px;
+    width: 144px;
+    height: 33px;
     appearance: none;
     border: 1px solid #939393;
     background-color: #ffffff;

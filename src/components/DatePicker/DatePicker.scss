@@ -1,16 +1,17 @@
-.container {
+.date_picker_container {
   position: relative;
-  width: 160px;
+  width: 134px;
+  margin-right: 10px;
 
-  input[type="time"] {
+  input[type="date"] {
     font-family: Arial;
     font-size: 13px;
-    width: 150px;
-    height: 35px;
+    width: 134px;
+    height: 31px;
     appearance: none;
     border: 1px solid #939393;
     background-color: #ffffff;
-    padding-left: 6px;
+    padding-left: 8px;
     color: #939393;
     background-repeat: no-repeat;
     background-position-x: 100%;
@@ -18,9 +19,9 @@
     outline: none;
   }
 
-  input[type="time"]::-webkit-calendar-picker-indicator {
-    background: none;
-    display:none;
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
   }
 
 }

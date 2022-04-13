@@ -4,6 +4,24 @@
   text-align: center;
 }
 
+.app_container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no_schedule_option {
+  height: 44px;
+}
+
+.weekly_schedule_option {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

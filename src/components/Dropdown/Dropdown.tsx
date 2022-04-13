@@ -1,21 +1,21 @@
-import React, {useState} from 'react';
-import styles from './Dropdown.module.scss'
+import React from 'react';
+import './Dropdown.scss'
 import Arrow from '../../images/dropdown_arrow.png'
 
 interface DropdownProps {
     options: string[];
+    value: string;
+    setValue: (value: string) => void;
 }
 
-const Dropdown = ({options}: DropdownProps) => {
-
-    const [value, setValue] = useState('')
+const Dropdown = ({options, value, setValue}: DropdownProps) => {
 
     return (
-        <div className={styles.container}>
-            <select onChange={(e) =>
+        <div className='dropdown_container'>
+            <select value={value} onChange={(e) =>
                 setValue(e.target.value)}>
-                {options.map((item) =>
-                    <option value={item}>{item}</option>
+                {options.map((item, index) =>
+                    <option key={item + index} value={item}>{item}</option>
                 )}
             </select>
             <img src={Arrow}/>

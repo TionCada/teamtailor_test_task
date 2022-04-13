@@ -1,13 +1,16 @@
-import React, {useState} from 'react';
-import styles from './TimePicker.module.scss'
+import React from 'react';
+import './TimePicker.scss'
 
-const TimePicker = () => {
+interface TimePickerProps {
+    value: string;
+    setValue: (value: string) => void;
+}
 
-    const [value, setValue] = useState('')
+const TimePicker = ({value, setValue}: TimePickerProps) => {
 
     return (
-        <div className={styles.container}>
-            <input type="time" required/>
+        <div className='time_picker_container'>
+            <input value={value} onChange={(e) => setValue(e.target.value)} type="time" required/>
         </div>
     );
 }
