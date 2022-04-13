@@ -8,5 +8,5 @@
 
 ## Reccomended environment
 
-Browser: Google Chrome
-Screen resolution: 1920x1080
+- Browser: Google Chrome
+- Screen resolution: 1920x1080
